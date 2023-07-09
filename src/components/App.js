@@ -39,7 +39,7 @@ export default function App() {
         item.map(itema => (itema.id === newItem[0].id ? itemToUpdate : itema))
       );
     }
-    console.log(items);
+    setOpenModal(false);
   }
   function handleClearList() {
     const confirmed = window.confirm(' sure  to delete all items ?');

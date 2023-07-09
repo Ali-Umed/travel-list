@@ -116,9 +116,18 @@ function Formm({
 }) {
   return (
     <form onSubmit={handleSubmit}>
-      <div className=" relative top-48 w-full h-48   z-10 shadow-lg border-2 rounded-lg bg-emerald-100/100 shadow-gray-500  ">
+      <div
+        className={` ${
+          setOpenModal ? ' relative top-48 w-full h-48' : ''
+        }    z-10 shadow-lg border-2 rounded-lg bg-emerald-100/100 shadow-gray-500  `}
+      >
         <div className="flex justify-around mt-5">
-          <h3 className="text-2xl text "> update your item </h3>
+          <h3 className="text-2xl text ">
+            {' '}
+            {setOpenModal
+              ? 'update your item'
+              : 'what do you want to buy ?'}{' '}
+          </h3>
           <select
             className="py-3 px-4 pr-9 block  border-gray-200 rounded-full text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
             value={quantity}
@@ -138,15 +147,17 @@ function Formm({
             onChange={e => setDescription(e.target.value)}
           />
           <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-            update item
+            {setOpenModal ? 'update  item' : 'add item '}
           </button>
 
-          {/*<button
-            className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"
-            onClick={() => setOpenModal(false)}
-          >
-            cancel
-          </button>*/}
+          {setOpenModal && (
+            <button
+              className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"
+              onClick={() => setOpenModal(false)}
+            >
+              cancel
+            </button>
+          )}
         </div>
       </div>
     </form>
