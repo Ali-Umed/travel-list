@@ -16,7 +16,6 @@ export default function Form({
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log('aa');
 
     if (!description) return;
 
