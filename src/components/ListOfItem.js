@@ -10,7 +10,7 @@ export default function ListOfItem({
   onUpdateItem,
   openModal,
   setOpenModal,
-  handleOpenModal
+  handleOpenModal,
 }) {
   const [sortBy, setSortBy] = useState('input');
 
@@ -33,7 +33,7 @@ export default function ListOfItem({
       <h1 className="text-center text-2xl font-bold text-blue-600">
         list of items{' '}
       </h1>
-      <ul className="flex items-center  flex-wrap space-x-16  mt-4  justify-center">
+      <ul className="   mt-4 space-y-2  ">
         {sortedItems.map(item => (
           <Item
             item={item}
@@ -50,7 +50,7 @@ export default function ListOfItem({
 
       <div className="flex justify-evenly mt-8">
         <select
-          className="py-3 px-4 pr-9   border-gray-200 rounded-full text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
+          className="py-3 px-4 pr-9 block   rounded-xl text-sm  border-[2px] border-violet-700 focus:border-purple-700 focus:ring-purple-500 "
           value={sortBy}
           onChange={e => setSortBy(e.target.value)}
         >
@@ -59,7 +59,7 @@ export default function ListOfItem({
           <option value="bought">Sort by bought status</option>
         </select>
         <button
-          className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"
+          className="bg-violet-700  focus:border-purple-500  rounded-xl  font-semibold text-white py-2 px-4 border  hover:border-transparent hover:bg-red-500"
           onClick={onClearList}
         >
           {' '}

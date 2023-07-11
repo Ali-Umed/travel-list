@@ -7,7 +7,7 @@ export default function Item({
   handleOpenModal,
 }) {
   return (
-    <li>
+    <li className="list-disc ml-7  marker:text-violet-700 text-2xl">
       <div>
         <input
           type="checkbox"
@@ -15,9 +15,20 @@ export default function Item({
           onChange={() => onToggleItem(item.id)}
         />
         <span
+          className={` ${
+            item.bought ? 'decoration-violet-700 line-through' : ''
+          } `}
           onDoubleClick={() => handleOpenModal(item)}
-          style={item.bought ? { textDecoration: 'line-through' } : {}}
+          //style={
+          //item.bought
+          //  ? {
+          //      textDecoration: 'line-through',
+          //      textDecorationColor: '#8341CA',
+          //    }
+          //  : {}
+          //}
         >
+          {item.quantity > 1 && 'x'}
           {item.quantity} {item.description}{' '}
         </span>
         <button onClick={() => onDeleteItem(item.id)}>❌</button>
