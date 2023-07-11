@@ -30,7 +30,7 @@ export default function ListOfItem({
 
   return (
     <div className="list mt-9 bg-emerald-100/30 text-lg pb-4">
-      <h1 className="text-center text-2xl font-bold text-blue-600">
+      <h1 className=" py-10 text-center text-2xl font-bold text-blue-600">
         list of items{' '}
       </h1>
       <ul className="   mt-4 space-y-2  ">
