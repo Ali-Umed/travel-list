@@ -56,7 +56,7 @@ export default function ListOfItem({
         >
           <option value="input">Sort by input order </option>
           <option value="description">Sort by description</option>
-          <option value="bought">Sort by bought status</option>
+          <option value="bought">Sort by buy status</option>
         </select>
         <button
           className="bg-violet-700  focus:border-purple-500  rounded-xl  font-semibold text-white py-2 px-4 border  hover:border-transparent hover:bg-red-500"
