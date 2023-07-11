@@ -124,7 +124,7 @@ function Formm({
           {' '}
           {setOpenModal ? 'Update your item' : 'What do you want to buy ?'}{' '}
         </h3>
-        <div className="flex justify-around flex-wrap  mt-5 py-5">
+        <div className="flex  flex-wrap space-x-1  mt-5 py-5">
           <select
             className="py-3 px-4 pr-9 block   rounded-xl text-sm  border-[2px] border-violet-700 focus:border-purple-700 focus:ring-purple-500  "
             value={quantity}
