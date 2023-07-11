@@ -3,7 +3,7 @@ import React from 'react';
 export default function Stats({ items }) {
   if (!items.length)
     return (
-      <p className=" bg-blue-900 text-xl text-yellow-50 text-center mt-auto  h-16  pt-4  ">
+      <p className=" bg-violet-700 text-xl text-yellow-50 text-center  mt-5 relative bottom-0   h-auto  py-6  ">
         <em>Start adding some items to your Item list </em>
       </p>
     );
