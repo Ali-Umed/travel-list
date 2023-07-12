@@ -81,8 +81,8 @@ function Formm({
     <form onSubmit={handleSubmit}>
       <div
         className={` ${
-          setOpenModal ? ' relative top-38  z-10 ' : ''
-        }   shadow-lg border-2  rounded-lg bg-gray-100 shadow-gray-500 `}
+          setOpenModal ? ' relative top-38  z-10 mt-3 ' : ''
+        }   shadow-lg border-2  rounded-lg bg-gray-100 shadow-gray-500  `}
       >
         <h3 className="text-2xl text-center pt-3  ">
           {setOpenModal ? 'Update your item' : 'What do you want to buy ?'}{' '}
