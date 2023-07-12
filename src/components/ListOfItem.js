@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Item from './Item';
 import React from 'react';
+import Button from './Button';
 
 export default function ListOfItem({
   items,
@@ -11,6 +12,8 @@ export default function ListOfItem({
   openModal,
   setOpenModal,
   handleOpenModal,
+  handleToggleCheckAll,
+  checkAll,
 }) {
   const [sortBy, setSortBy] = useState('input');
 
@@ -29,7 +32,7 @@ export default function ListOfItem({
       .sort((a, b) => Number(a.bought) - Number(b.bought));
 
   return (
-    <div className="list mt-9 bg-emerald-100/30 text-lg pb-4">
+    <div className="list md:mt-2 mt-9 bg-emerald-100/30 text-lg pb-4">
       <h1 className=" py-5 text-center text-3xl font-bold text-blue-600">
         list of items{' '}
       </h1>
@@ -61,13 +64,21 @@ export default function ListOfItem({
           </select>
         )}
         {sortedItems.length > 0 && (
-          <button
-            className="bg-violet-700  focus:border-purple-500  rounded-xl  font-semibold text-white py-2 px-4 border  hover:border-transparent hover:bg-red-500"
-            onClick={onClearList}
-          >
-            Clear list
-          </button>
+          <Button
+            handleFunction={onClearList}
+            text={'Clear list'}
+            className={'hover:bg-red-500'}
+          />
         )}
+
+        {sortedItems.length > 0 && (
+          <Button
+            text={checkAll ? 'checkAll' : 'un CheckAll'}
+            handleFunction={handleToggleCheckAll}
+            className={'hover:bg-green-500'}
+          />
+        )}
+
         {sortedItems.length === 0 && (
           <h4 className=" font-bold text-xl text-center  mt-auto     py-6">
             You dont have any item Starting adding some items to your item list{' '}

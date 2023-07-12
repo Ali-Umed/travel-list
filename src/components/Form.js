@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import React from 'react';
+import Button from './Button';
 
 export default function Form({
   onAddItems,
@@ -82,7 +83,7 @@ function Formm({
       <div
         className={` ${
           setOpenModal ? ' relative top-38  z-10 mt-3 ' : ''
-        }   shadow-lg border-2  rounded-lg bg-gray-100 shadow-gray-500  `}
+        }   shadow-lg border-2  rounded-lg bg-gray-100 shadow-gray-500 md:mt-2 `}
       >
         <h3 className="text-2xl text-center pt-3  ">
           {setOpenModal ? 'Update your item' : 'What do you want to buy ?'}{' '}
@@ -110,17 +111,16 @@ function Formm({
             value={description}
             onChange={e => setDescription(e.target.value)}
           />
-          <button className="bg-violet-700 focus:border-purple-500  rounded-xl  font-semibold text-white py-2 px-4 border  hover:border-transparent ">
-            {setOpenModal ? 'Update ' : 'Add  '}
-          </button>
+          <Button
+            text={setOpenModal ? 'Update ' : 'Add  '}
+            handleFunction={() => handleSubmit}
+          />
 
           {setOpenModal && (
-            <button
-              className="bg-violet-700 focus:border-purple-500  rounded-xl  font-semibold text-white py-2 px-4 border  hover:border-transparent "
-              onClick={() => setOpenModal(false)}
-            >
-              cancel
-            </button>
+            <Button
+              handleFunction={() => setOpenModal(false)}
+              text={'cancel'}
+            />
           )}
         </div>
       </div>

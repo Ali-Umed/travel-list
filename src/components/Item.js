@@ -1,4 +1,5 @@
 import React from 'react';
+import deleteIcon from '../img/delete.svg';
 
 export default function Item({
   item,
@@ -6,6 +7,7 @@ export default function Item({
   onToggleItem,
   handleOpenModal,
 }) {
+  console.log('run');
   return (
     <li className="list-disc ml-7  marker:text-violet-700 text-2xl">
       <div>
@@ -13,6 +15,7 @@ export default function Item({
           className="accent-violet-700"
           type="checkbox"
           value={item.bought}
+          checked={item.bought}
           onChange={() => onToggleItem(item.id)}
         />
         <span
@@ -25,7 +28,7 @@ export default function Item({
           {item.quantity} {item.description}{' '}
         </span>
         <button className="text-lg  " onClick={() => onDeleteItem(item.id)}>
-          ❌
+          <img src={deleteIcon} className="w-4 h-4 " alt="" />
         </button>
       </div>
     </li>
