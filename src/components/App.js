@@ -48,7 +48,7 @@ export default function App() {
   }
 
   return (
-    <div className="w-screen    h-screen  bg-fuchsia-50 flex flex-col  ">
+    <div className="px-5 pt-5 w-screen    h-screen  bg-fuchsia-50 flex flex-col  ">
       <Logo />
       <Form
         onAddItems={handleAddItems}
