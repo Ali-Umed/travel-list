@@ -73,7 +73,7 @@ export default function ListOfItem({
 
         {sortedItems.length > 0 && (
           <Button
-            text={checkAll ? 'checkAll' : 'un CheckAll'}
+            text={checkAll ? 'checkAll' : 'unCheck'}
             handleFunction={handleToggleCheckAll}
             className={'hover:bg-green-500'}
           />
