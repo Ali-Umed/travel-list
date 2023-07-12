@@ -82,15 +82,14 @@ function Formm({
       <div
         className={` ${
           setOpenModal ? ' relative top-38  z-10 ' : ''
-        }   shadow-lg border-2 rounded-lg bg-gray-100 shadow-gray-500 `}
+        }   shadow-lg border-2  rounded-lg bg-gray-100 shadow-gray-500 `}
       >
         <h3 className="text-2xl text-center pt-3  ">
-          {' '}
           {setOpenModal ? 'Update your item' : 'What do you want to buy ?'}{' '}
         </h3>
-        <div className="flex justify-center space-x-1  mt-5 py-5">
+        <div className="flex justify-center items-center space-x-2 md:space-x-5  mt-5 py-5">
           <select
-            className="py-3 px-4 pr-9 block   rounded-xl text-sm  border-[2px] border-violet-700 focus:border-purple-700 focus:ring-purple-500  "
+            className="py-2 px-4 pr-9 block   rounded-xl text-sm  border-[2px] border-violet-700 focus:border-purple-700 focus:ring-purple-500  "
             value={quantity}
             onChange={e => setQuantity(Number(e.target.value))}
           >
@@ -117,7 +116,7 @@ function Formm({
 
           {setOpenModal && (
             <button
-              className="bg-violet-700 focus:border-purple-500  rounded-xl  font-semibold text-white py-2 px-4 border  hover:border-transparent mt-5"
+              className="bg-violet-700 focus:border-purple-500  rounded-xl  font-semibold text-white py-2 px-4 border  hover:border-transparent "
               onClick={() => setOpenModal(false)}
             >
               cancel
