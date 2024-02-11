@@ -14,7 +14,6 @@ export default function App() {
   function handleDeleteItem(id) {
     setItems((items) => items.filter((item) => item.id !== id));
   }
-
   function handleToggleItem(id) {
     setItems((items) =>
       items.map((item) =>
@@ -22,12 +21,10 @@ export default function App() {
       )
     );
   }
-
   function handleClearList() {
     const confirmed = window.confirm(
       "Are you sure you want to delete all items?"
     );
-
     if (confirmed) setItems([]);
   }
 
